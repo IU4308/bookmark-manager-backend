@@ -5,6 +5,11 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
 
+    app.enableCors({
+        origin: process.env.FRONTEND_URL,
+        credentials: true,
+    });
+
     const config = new DocumentBuilder()
         .setTitle('Bookmarks API')
         .setDescription('The bookmarks API description')
