@@ -4,6 +4,9 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
+import { BookmarksController } from './bookmarks/bookmarks.controller';
+import { BookmarksModule } from './bookmarks/bookmarks.module';
 
 @Module({
     imports: [
@@ -20,8 +23,10 @@ import { UsersModule } from './users/users.module';
             synchronize: false,
         }),
         UsersModule,
+        AuthModule,
+        BookmarksModule,
     ],
-    controllers: [AppController],
+    controllers: [AppController, BookmarksController],
     providers: [AppService],
 })
 export class AppModule {}
