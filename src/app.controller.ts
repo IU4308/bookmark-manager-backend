@@ -9,9 +9,4 @@ export class AppController {
     getHello(): string {
         return this.appService.getHello();
     }
-
-    @Get('bookmarks')
-    getBookmarks(): Array<{ id: number; title: string; url: string }> {
-        return this.appService.getBookmarks();
-    }
 }

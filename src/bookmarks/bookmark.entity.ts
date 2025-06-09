@@ -7,7 +7,6 @@ import {
     ManyToOne,
     JoinColumn,
 } from 'typeorm';
-// import { User } from 'src/users/user.entity'; // adjust path if needed
 
 @Entity({ name: 'bookmarks' })
 export class Bookmark {
@@ -16,6 +15,9 @@ export class Bookmark {
 
     @Column({ type: 'varchar', length: 255 })
     title: string;
+
+    @Column({ type: 'varchar', length: 255 })
+    image: string;
 
     @Column({ type: 'varchar', length: 255 })
     url: string;

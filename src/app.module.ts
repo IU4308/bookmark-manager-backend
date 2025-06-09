@@ -5,7 +5,6 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
-import { BookmarksController } from './bookmarks/bookmarks.controller';
 import { BookmarksModule } from './bookmarks/bookmarks.module';
 
 @Module({
@@ -26,7 +25,7 @@ import { BookmarksModule } from './bookmarks/bookmarks.module';
         AuthModule,
         BookmarksModule,
     ],
-    controllers: [AppController, BookmarksController],
+    controllers: [AppController],
     providers: [AppService],
 })
 export class AppModule {}
